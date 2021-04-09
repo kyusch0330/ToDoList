@@ -1,0 +1,181 @@
+:root{
+  /* colors */
+  --color-background0:#fcfbf8;
+  --color-background1:#ffb6b6;
+  --color-background2:#c3ecd1;
+  --color-background3:#f3ccfc;
+
+  --color-header0:#e6e3d1;
+
+  --color-black:#303030;
+  --color-white:#F0F0F0;
+  --color-lightGray:#C0C0C0;
+
+  --color-listBox:rgba(255,255,255,0.6);
+
+  --color-buttonColor1:#a83e3e;
+  --color-buttonColor2:#3ea83e;
+  /* font-size */
+  --fontSize-small:1rem;
+  --fontSize-normal:2rem;
+  --fontSize-large:3rem;
+  --fontSize-viewWidth-normal:1vw;
+
+  --buttonSize-small:2rem;
+  --buttonSize-normal:3rem;
+
+  /* padding */
+  --padding-textBox:0.7rem;
+  --padding-toDo:1.5rem;
+  --margin-toDo:0.5rem;
+  --padding-small:2rem;
+  --padding-normal:3rem;
+  --padding-large:4rem;
+}
+
+*{
+  margin:0;
+  padding:0;
+}
+body{
+  background-color: var(--color-background0);
+}
+
+/* Header */
+
+header{
+  display:flex;
+  justify-content: space-between;
+
+  background-color: var(--color-header0);
+
+  padding:var(--padding-small);
+}
+
+header .listMenu{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header .listMenu li{
+  list-style: none;
+}
+
+header .listMenu button{
+  color:var(--color-white);
+  font-size:var(--fontSize-normal);
+  font-weight: bold;
+
+  width: var(--buttonSize-normal);
+  height: var(--buttonSize-normal);
+  margin-right:var(--padding-small);
+}
+
+#longTermListBtn{
+  border-radius: 25%;
+  border: 2px solid var(--color-lightGray);
+  background-color:var(--color-buttonColor1);
+}
+
+#todayListBtn{
+  border-radius: 25%;
+  border: 2px solid var(--color-lightGray);
+  background-color:var(--color-buttonColor2);
+}
+
+.headTitle{
+  flex-basis: 50%;
+  font-size:var(--fontSize-large);
+  font-family: 'Rock Salt', cursive;
+  color:--color-black;
+  text-align: center;
+
+  margin: 0 var(--padding-normal);
+}
+
+.themeMenu{
+  display: flex;
+  flex-flow:row wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.themeMenu li{
+  list-style: none;
+  background-color: var(--color-background0);
+
+  width:var(--buttonSize-small);
+  height:var(--buttonSize-small);
+  margin-right:var(--padding-small);
+}
+
+
+.listContainer{
+  display:flex;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  padding:var(--padding-large);
+}
+
+.listContainer .listBox{
+  display:flex;
+  flex-flow:column nowrap;
+  justify-content: space-between;
+  align-items: center;
+
+  width:30%;
+  min-width:12rem;
+  
+
+}
+
+.listContainer .listBox .listBoxHeader{
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  width:100%;
+
+  background-color: var(--color-listBox);
+  border: 1px solid var(--color-lightGray);
+  border-top: 5px solid var(--color-buttonColor2);
+  border-radius: 5px;
+  padding: var(--padding-small)  var(--padding-normal);
+
+}
+
+.listContainer .listBox .listBoxHeader .listInput{
+  border: 1px solid var(--color-black);
+  border-radius: 2px;
+  width: 75%;
+  height: var(--fontSize-viewWidth-normal);
+  padding: var(--padding-textBox);
+  
+  font-size:var(--fontSize-viewWidth_normal);
+}
+
+.listContainer .listBox .listBoxHeader .AddListBtn{
+  width: var(--buttonSize-small);
+  height:var(--buttonSize-small);
+  margin-left: 3%;
+}
+
+.listContainer .listBox .toDos{
+  display:flex;
+  flex-flow:column-reverse;
+  align-items: center;
+  margin: var(--padding-small) 0;
+  width:120%;
+}
+.listContainer .listBox .toDos .toDo{
+  width: 100%;
+  margin: var(--margin-toDo) 0;
+  padding: var(--padding-toDo);
+  
+  color:var(--color-black);
+  background-color: var(--color-listBox);
+  border-radius: 20px;
+  border:1px solid var(--color-lightGray);
+
+  text-align: center;
+  font-weight: bolder;
+}
