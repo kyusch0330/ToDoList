@@ -10,6 +10,7 @@
   --color-black:#303030;
   --color-white:#F0F0F0;
   --color-lightGray:#C0C0C0;
+  --color-darkGray:#909090;
 
   --color-listBox:rgba(255,255,255,0.6);
 
@@ -153,9 +154,14 @@ header .listMenu button{
   font-size:var(--fontSize-viewWidth_normal);
 }
 
-.listContainer .listBox .listBoxHeader .AddListBtn{
+.listContainer .listBox .listBoxHeader .deleteBtn{
   width: var(--buttonSize-small);
   height:var(--buttonSize-small);
+  background-color: var(--color-buttonColor1);
+  font-size:var(--fontSize-small);
+  font-weight: bold;
+  color:var(--color-white);
+  border:2px solid var(--color-lightGray);
   margin-left: 3%;
 }
 
@@ -179,3 +185,10 @@ header .listMenu button{
   text-align: center;
   font-weight: bolder;
 }
+
+.listContainer .listBox .toDos .toDo.checked{
+  background-color: var(--color-lightGray);
+  color: var(--color-darkGray);
+  text-decoration: line-through;
+}
+
