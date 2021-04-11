@@ -1,9 +1,6 @@
 :root{
   /* colors */
   --color-background0:#fcfbf8;
-  --color-background1:#ffb6b6;
-  --color-background2:#c3ecd1;
-  --color-background3:#f3ccfc;
 
   --color-header0:#e6e3d1;
 
@@ -15,6 +12,7 @@
   --color-listBox:rgba(255,255,255,0.6);
 
   --color-buttonColor1:#a83e3e;
+  --color-buttonColor1-light:#c85e5e;
   --color-buttonColor2:#3ea83e;
   /* font-size */
   --fontSize-small:1rem;
@@ -46,43 +44,13 @@ body{
 
 header{
   display:flex;
-  justify-content: space-between;
+  justify-content: center;
 
   background-color: var(--color-header0);
 
   padding:var(--padding-small);
 }
 
-header .listMenu{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-header .listMenu li{
-  list-style: none;
-}
-
-header .listMenu button{
-  color:var(--color-white);
-  font-size:var(--fontSize-normal);
-  font-weight: bold;
-
-  width: var(--buttonSize-normal);
-  height: var(--buttonSize-normal);
-  margin-right:var(--padding-small);
-}
-
-#longTermListBtn{
-  border-radius: 25%;
-  border: 2px solid var(--color-lightGray);
-  background-color:var(--color-buttonColor1);
-}
-
-#todayListBtn{
-  border-radius: 25%;
-  border: 2px solid var(--color-lightGray);
-  background-color:var(--color-buttonColor2);
-}
 
 .headTitle{
   flex-basis: 50%;
@@ -93,23 +61,6 @@ header .listMenu button{
 
   margin: 0 var(--padding-normal);
 }
-
-.themeMenu{
-  display: flex;
-  flex-flow:row wrap;
-  justify-content: space-between;
-  align-items: flex-start;
-}
-
-.themeMenu li{
-  list-style: none;
-  background-color: var(--color-background0);
-
-  width:var(--buttonSize-small);
-  height:var(--buttonSize-small);
-  margin-right:var(--padding-small);
-}
-
 
 .listContainer{
   display:flex;
@@ -164,6 +115,11 @@ header .listMenu button{
   border:2px solid var(--color-lightGray);
   margin-left: 3%;
 }
+.listContainer .listBox .listBoxHeader .deleteBtn:hover{
+  background-color: var(--color-buttonColor1-light);
+  cursor: pointer;
+}
+
 
 .listContainer .listBox .toDos{
   display:flex;
@@ -184,6 +140,7 @@ header .listMenu button{
 
   text-align: center;
   font-weight: bolder;
+  transition: all ease-in-out 0.5s 0s;
 }
 
 .listContainer .listBox .toDos .toDo.checked{

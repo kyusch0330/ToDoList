@@ -2,14 +2,19 @@
 let toDos= [];
 
 const TODOS_KEY = "toDos";
-const listInput = document.querySelector('.listInput');
+const listInput = 
+document.querySelector('.listInput');
 
-const toDosBoard =document.querySelector('.toDos');
+const toDosBoard = 
+document.querySelector('.toDos');
 
-const deleteBtn = document.querySelector('.deleteBtn');
+const deleteBtn = 
+document.querySelector('.deleteBtn');
 
 function deleteChecks(){
-  const checks = document.querySelectorAll(".toDo.checked");
+  const checks = 
+  document.querySelectorAll(".toDo.checked");
+
   for(let i=0;i<checks.length;i++){
     toDos=toDos.filter((toDo)=>{
       return checks.item(i).id!==toDo.id.toString();  //remove from toDos array
@@ -24,10 +29,14 @@ function deleteChecks(){
   }
   saveToDos();
 }
+
 deleteBtn.addEventListener('click',deleteChecks);
 
+
 function printToDo(toDo){
-  const td = document.createElement("div");
+  const td = 
+  document.createElement("div");
+  
   td.classList.add("toDo");
   td.innerHTML=toDo.text ;
   td.id=toDo.id;
