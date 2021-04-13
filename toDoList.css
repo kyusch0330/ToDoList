@@ -168,5 +168,6 @@ header{
   background-color: var(--color-lightGray);
   color: var(--color-darkGray);
   text-decoration: line-through;
+  animation:none;
 }
 
