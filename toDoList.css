@@ -131,6 +131,7 @@ header{
 }
 .listContainer .listBox .toDos .toDo{
   width: 100%;
+  height: auto;
   margin: var(--margin-toDo) 0;
   padding: var(--padding-toDo);
   
@@ -146,6 +147,8 @@ header{
   animation-name : toDosAction;
   animation-duration: 1s;
 
+  /* width 초과시 줄바꿈(공백없는 긴 문자열) */
+  word-break:break-all;
 }
 
 @keyframes toDosAction{
