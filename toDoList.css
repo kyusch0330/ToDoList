@@ -14,6 +14,7 @@
   --color-buttonColor1:#a83e3e;
   --color-buttonColor1-light:#c85e5e;
   --color-buttonColor2:#3ea83e;
+  --color-buttonColor2-light:#8ee88e;
   /* font-size */
   --fontSize-small:1rem;
   --fontSize-normal:2rem;
@@ -141,6 +142,26 @@ header{
   text-align: center;
   font-weight: bolder;
   transition: all ease-in-out 0.5s 0s;
+
+  animation-name : toDosAction;
+  animation-duration: 1s;
+
+}
+
+@keyframes toDosAction{
+  from{
+    font-size:var(--fontSize-small);
+    width:30%;
+    opacity: 0;
+  }
+  50%{
+    font-size:calc(var(--fontSize-small)*1.2);
+    background-color: var(--color-buttonColor2-light);
+    width:105%;
+    opacity: 0.7;
+  }
+  to{
+  }
 }
 
 .listContainer .listBox .toDos .toDo.checked{

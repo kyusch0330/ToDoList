@@ -40,9 +40,14 @@ function printToDo(toDo){
   td.classList.add("toDo");
   td.innerHTML=toDo.text ;
   td.id=toDo.id;
+  if(toDo.checked){
+    td.classList.add("checked");
+  }
   //when clicked, ToDo get checked
   td.addEventListener("click",()=>{
     td.classList.toggle("checked");
+    toDos[td.id].checked=!toDos[td.id].checked;
+    saveToDos();
   });
   //when double-clicked, All of ToDo get checked
   //if you double-click checked ToDo, All of ToDo get unchecked
@@ -52,15 +57,19 @@ function printToDo(toDo){
       for(let i=0;i<toDos.length;i++){
         boardChild.classList.remove("checked");
         boardChild=boardChild.nextSibling;
+
+        toDos[i].checked=false;
       }
     }
     else{
       for(let i=0;i<toDos.length;i++){
         boardChild.classList.add("checked");
         boardChild=boardChild.nextSibling;
+
+        toDos[i].checked=true;
       }
     }
-  
+    saveToDos();
   });
 
   toDosBoard.appendChild(td); 
@@ -73,11 +82,12 @@ function saveToDos(){
 }
 
 listInput.addEventListener('keydown',(e)=>{
-  if(e.keyCode==13){
+  if(e.keyCode==13 && listInput.value!=""){
     
     const toDo = {
       text:listInput.value,
-      id:toDos.length
+      id:toDos.length,
+      checked:false
     };
     toDos.push(toDo);
     printToDo(toDo);
