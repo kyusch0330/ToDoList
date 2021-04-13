@@ -165,7 +165,9 @@ header{
 }
 
 .listContainer .listBox .toDos .toDo.checked{
+  width: 90%;
   background-color: var(--color-lightGray);
+  font-size:calc(var(--fontSize-small)*0.9);
   color: var(--color-darkGray);
   text-decoration: line-through;
   animation:none;
